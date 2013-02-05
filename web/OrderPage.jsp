@@ -20,8 +20,8 @@
                 <option value="Chili">Chili</option>
             </select>
 
-            <input type="submit" value="Order"> 
-            </input>
+            <input type="submit" value="Order"></input>
+
         </form>
     </body>
 </html>
