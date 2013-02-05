@@ -13,18 +13,14 @@
     </head>
     <body>
         <form id="one" name="one" method="POST" action="MenuInput">
-            <select name="DropDownMenuList">
+
+            <select name="menuChoice">
                 <option value="Steak">Steak</option>
                 <option value="Lobster">Lobster</option>
                 <option value="Chili">Chili</option>
             </select>
-            <input type="submit" value="Order">
-            
-            <script type="text/javascript">
-                var selID = document.getElementById("DropDownMenuList");
-                var text = selID.options[selID.selectedIndex].text;
-            </script>
-            
+
+            <input type="submit" value="Order"> 
             </input>
         </form>
     </body>
