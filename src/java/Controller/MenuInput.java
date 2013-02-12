@@ -1,8 +1,7 @@
 package Controller;
 
-import Services.Server;
+import Services.RestaurantServer;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MenuInput extends HttpServlet {
 
     private final static String RESULT_PAGE = "/BillResult.jsp";
-    private Server waiter = new Server();
+    private RestaurantServer waiter = new RestaurantServer();
     private String YES = "YES";
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -35,10 +34,10 @@ public class MenuInput extends HttpServlet {
         String lineItem = request.getParameter("menuChoice");
 
         if (isNewOrder.equals(YES)) {
-            waiter = new Server();
+            waiter = new RestaurantServer();
         }
-
         waiter.addToOrder(lineItem);
+        
         request.setAttribute("bill", waiter.getReceipt());
         RequestDispatcher view = request.getRequestDispatcher(RESULT_PAGE);
         view.forward(request, response);

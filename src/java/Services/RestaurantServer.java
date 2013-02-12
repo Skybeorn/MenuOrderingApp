@@ -4,12 +4,12 @@ package Services;
 import Model.FoodTicket;
 
 
-public class Server {
+public class RestaurantServer {
     
     private FoodTicket customersOrder = new FoodTicket();
     
     public void addToOrder(String item) {
-        customersOrder.addItemToOrder(item);
+        customersOrder.addItemToFoodTicket(item);
     }
 
     public String getReceipt() {
@@ -30,7 +30,7 @@ public class Server {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Server other = (Server) obj;
+        final RestaurantServer other = (RestaurantServer) obj;
         if (this.customersOrder != other.customersOrder && (this.customersOrder == null || !this.customersOrder.equals(other.customersOrder))) {
             return false;
         }
