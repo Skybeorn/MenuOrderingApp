@@ -6,6 +6,9 @@ public class FoodCombo {
     private String description;
     private double Price;
 
+    public FoodCombo() {
+    }
+
     public FoodCombo(String name, String description, double Price) {
         this.name = name;
         this.description = description;

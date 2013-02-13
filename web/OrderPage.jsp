@@ -4,6 +4,8 @@
     Author     : Skybeorn
 --%>
 
+<%@page import="Model.FoodCombo"%>
+<%@page import="Model.FakeDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,9 +24,20 @@
             <br>
             <h1> Please select a menu Choice</h1>
             <select id="menuChoice" name="menuChoice">
-                <option value="comboOne">Nachos w/Chorizo</option>
-                <option value="comboTwo">Nachos w/Beef</option>
+                <%
+                    for (FoodCombo menuItem : FakeDB.combos) {
+                        String item = menuItem.getName();
+                        double itemPrice = menuItem.getPrice();
+                        String description = menuItem.getDescription();
+                %>
+
+                <option value="<%= item%>"><%= (description + ", " + itemPrice)%></option>
+
+                <%
+                    }
+                %>
             </select>
+
             <input type="submit" value="ADD TO ORDER"></input>
 
         </form>
